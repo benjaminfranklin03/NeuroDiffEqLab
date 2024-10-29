@@ -72,9 +72,10 @@ Each notebook provides a from-scratch implementation of a specific model, design
 
 For example, to explore Neural ODEs:
 
-- 1. Go to notebooks/NeuralODE.ipynb.
-- 2. Run each cell sequentially to understand the model's components and how it performs on sample data.
-- 3. Experiment with hyperparameters, solver choices, and architectures to see how they impact model behavior.
+1. Go to `notebooks/NeuralODE.ipynb`.
+2. Run each cell sequentially to understand the model's components and how it performs on sample data.
+3. Experiment with hyperparameters, solver choices, and architectures to see how they impact model behavior.
+
 
 ## Examples and Visualizations
 
@@ -85,20 +86,21 @@ For example, to explore Neural ODEs:
 This project was inspired by key research papers in Neural Differential Equations. For further reading, check out the foundational papers that shaped each model:
 
 - **Neural ODEs:**
-    Chen, R. T. Q., Rubanova, Y., Bettencourt, J., & Duvenaud, D. (2018). Neural Ordinary Differential Equations. Advances in Neural   Information Processing Systems.
+   Chen, R. T. Q., Rubanova, Y., Bettencourt, J., & Duvenaud, D. (2018). Neural Ordinary Differential Equations. *Advances in Neural Information Processing Systems*.
 
 - **Augmented Neural ODEs:**
-    Dupont, E., Doucet, A., & Teh, Y. W. (2019). Augmented Neural ODEs. Advances in Neural Information Processing Systems.
+   Dupont, E., Doucet, A., & Teh, Y. W. (2019). Augmented Neural ODEs. *Advances in Neural Information Processing Systems*.
 
 - **Neural SDEs:**
-    Tzen, B., & Raginsky, M. (2019). Neural Stochastic Differential Equations: Deep Latent Gaussian Models in the Diffusion Limit. arXiv preprint arXiv:1905.09883.
+   Tzen, B., & Raginsky, M. (2019). Neural Stochastic Differential Equations: Deep Latent Gaussian Models in the Diffusion Limit. *arXiv preprint arXiv:1905.09883*.
 
 - **Neural CDEs:**
-    Kidger, P., Morrill, J., Foster, J., & Lyons, T. (2020). Neural Controlled Differential Equations for Irregular Time Series. Advances in Neural Information Processing Systems.
+   Kidger, P., Morrill, J., Foster, J., & Lyons, T. (2020). Neural Controlled Differential Equations for Irregular Time Series. *Advances in Neural Information Processing Systems*.
 
 - **Physics-Informed Neural Networks (PINNs):**
-    Raissi, M., Perdikaris, P., & Karniadakis, G. E. (2019). Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations. Journal of Computational Physics, 378, 686-707.
+   Raissi, M., Perdikaris, P., & Karniadakis, G. E. (2019). Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations. *Journal of Computational Physics, 378*, 686-707.
 
 - **On Neural Differential Equations:**
-    Kidger, P. (2022). On Neural Differential Equations. PhD Thesis, University of Oxford.
+   Kidger, P. (2022). On Neural Differential Equations. PhD Thesis, University of Oxford.
+
 ```
