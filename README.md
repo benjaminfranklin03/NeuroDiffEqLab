@@ -1,12 +1,10 @@
 # Building Neural Differential Equations from Scratch
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/benjaminfranklin03/NeuroDiffEqLab/ci.yml?branch=main&label=build&logo=github)
 ![License](https://img.shields.io/github/license/benjaminfranklin03/NeuroDiffEqLab)
+![Python Version](https://img.shields.io/badge/python-3.7%2B-blue)
 ![GitHub Stars](https://img.shields.io/github/stars/benjaminfranklin03/NeuroDiffEqLab?style=social)
 ![GitHub Forks](https://img.shields.io/github/forks/benjaminfranklin03/NeuroDiffEqLab?style=social)
-![Issues](https://img.shields.io/github/issues/benjaminfranklin03/NeuroDiffEqLab)
 ![Last Commit](https://img.shields.io/github/last-commit/benjaminfranklin03/NeuroDiffEqLab)
-![Python Version](https://img.shields.io/badge/python-3.7%2B-blue)
 
 Welcome to **NeuroDiffEqLab**!🚀 This project is a practical journey in building Neural Differential Equations (Neural DEs) from scratch, inspired by foundational research papers. Here, you’ll find implementations of a range of models, from basic Neural ODEs to advanced frameworks like Neural SDEs, Neural CDEs, and PINNs.
 
