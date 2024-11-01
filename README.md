@@ -3,6 +3,7 @@
 
 Welcome to **NeuroDiffEqLab**!🚀 This project is a practical journey in building Neural Differential Equations (Neural DEs) from scratch, inspired by foundational research papers. Here, you’ll find implementations of a range of models, from basic Neural ODEs to advanced frameworks like Neural SDEs, Neural CDEs, and PINNs.
 
+{first i'll implement a neural ODE from scratch and train it on some generated lorenz attractor dataset. then i'll train the other models on actual data of a 3 dimensional vector field of a tornado. i will have to do this with pytorch, since i need the gpu acceleration.}
 
 ![Project Banner](images/project_banner.png)
 
