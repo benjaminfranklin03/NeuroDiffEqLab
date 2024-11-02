@@ -43,7 +43,7 @@ The repository showcases the process of constructing these models and training t
 
 ### 2. Neural ODE with JAX
 
-**Description**: This version takes advantage of JAX’s powerful automatic differentiation and efficient computation on GPUs. The model is trained on a slightly more complex system of ODEs, like the Van Der Pol oscillator, to explore how well it can capture non-linear dynamics.
+**Description**: This version takes advantage of JAX’s automatic differentiation and GPU acceleration. The model is trained on a slightly more complex system of ODEs, like the Van Der Pol oscillator, to explore how well it can model non-linear dynamics.
 
 ![JAX Neural ODE Example](images/jax_neural_ode_example.png)
 
