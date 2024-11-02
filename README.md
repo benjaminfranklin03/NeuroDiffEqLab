@@ -91,7 +91,7 @@ Follow these steps to set up the project:
 
 Each implementation can be found in the `notebooks/` directory:
 
-- **`NeuralODE_FromScratch.ipynb`**: Details the basic implementation, training on simple regression data.
+- **`NeuralODE_scratch.ipynb`**: Details the basic implementation, training on simple regression data.
 - **`NeuralODE_JAX.ipynb`**: Explores the JAX implementation and training on the Van Der Pol oscillator system.
 
 Simply open the notebooks in Jupyter and follow along to see the code, explanations, and results. Additionally, some visualizations can be found in the training plots.
