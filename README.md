@@ -1,9 +1,6 @@
-# Building Neural Differential Equations from Scratch
+# Building Neural Ordinary Differential Equations from Scratch
 
-
-Welcome to **NeuroDiffEqLab**!🚀 This project is a practical journey in building Neural Differential Equations (Neural DEs) from scratch, inspired by foundational research papers. Here, you’ll find implementations of a range of models, from basic Neural ODEs to advanced frameworks like Neural SDEs, Neural CDEs, and PINNs.
-
-{first i'll implement a neural ODE from scratch and train it on some generated lorenz attractor dataset. then i'll train the other models on actual data of a 3 dimensional vector field of a tornado. i will have to do this with pytorch, since i need the gpu acceleration.}
+Welcome to **NeuroDiffEqLab**! 🚀 This project is a deep dive into understanding and building Neural Ordinary Differential Equations (Neural ODEs) from scratch, both manually and using JAX. The project serves as an exploration into implementing these models, training them on simple tasks, and analyzing their behaviors.
 
 ![Project Banner](images/project_banner.png)
 
@@ -12,97 +9,67 @@ Welcome to **NeuroDiffEqLab**!🚀 This project is a practical journey in buildi
 ## Table of Contents
 - [Project Overview](#project-overview)
 - [Implemented Models](#implemented-models)
-  - [1. Neural Ordinary Differential Equations (Neural ODEs)](#1-neural-ordinary-differential-equations-neural-odes)
-  - [2. Augmented Neural Ordinary Differential Equations (ANODEs)](#2-augmented-neural-ordinary-differential-equations-anodes)
-  - [3. Neural Stochastic Differential Equations (Neural SDEs)](#3-neural-stochastic-differential-equations-neural-sdes)
-  - [4. Neural Controlled Differential Equations (Neural CDEs)](#4-neural-controlled-differential-equations-neural-cdes)
-  - [5. Physics-Informed Neural Networks (PINNs)](#5-physics-informed-neural-networks-pinns)
+  - [1. Basic Neural ODE from Scratch](#1-basic-neural-ode-from-scratch)
+  - [2. Neural ODE with JAX](#2-neural-ode-with-jax)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Examples and Visualizations](#examples-and-visualizations)
+- [Results and Insights](#results-and-insights)
 - [References](#references)
 
 ---
 
-
 ## Project Overview
 
-**NeuroDiffEqLab** provides an in-depth, low-level exploration of Neural Differential Equations. Every model is implemented without high-level libraries, focusing on the mathematical foundation and methods from the original research. This approach offers full control over each component—from forward integration to backpropagation with adjoint methods.
+**NeuroDiffEqLab** focuses on implementing and understanding Neural ODEs through two primary approaches:
+- A basic implementation from scratch to gain insight into the underlying mechanics.
+- A JAX-based implementation to leverage its efficiency and automatic differentiation capabilities.
 
-The repository is organized around Jupyter notebooks and source files, complete with explanations and visualizations, making it ideal for both learners and researchers to explore the mechanisms and applications of Neural DEs.
+The repository showcases the process of constructing these models, training them on a simple regression task and a dynamic system (e.g., Van Der Pol oscillator), and reflecting on the performance and learnings from each phase.
 
-
-Here’s what you can expect:
-- **Hands-on implementations** of various Neural DE models.
-- **In-depth documentation** explaining how each model works.
-- **Cool visualizations** to showcase the power and behavior of these models.
-- **Thoughts and reflections** as I navigate through the complexities of each approach.
-
-![Neural ODE Diagram](images/neural_ode_example.png)
+---
 
 ## Implemented Models
 
-### 1. Neural Ordinary Differential Equations (Neural ODEs)
+### 1. Basic Neural ODE from Scratch
 
-**Description**: Neural ODEs model the hidden state dynamics of a neural network as a continuous-time ODE. This allows for adaptive computation and better handling of complex temporal dependencies.
+**Description**: This implementation involves building a Neural ODE model without relying on high-level libraries, allowing for a thorough understanding of the mathematical underpinnings. The model is trained on a simple regression task to demonstrate its ability to learn continuous representations.
 
-![Neural ODE Example](images/neural_ode_example.png)
+![Basic Neural ODE Example](images/neural_ode_example.png)
 
-**Reference**:  
-Chen, R. T. Q., Rubanova, Y., Bettencourt, J., & Duvenaud, D. (2018). [Neural Ordinary Differential Equations](https://arxiv.org/abs/1806.07366). *arXiv preprint arXiv:1806.07366*.
+**Key Features**:
+- Handcrafted ODE solver.
+- Manual backpropagation through the adjoint method.
+- Analysis of training results and model behavior.
 
-### 2. Augmented Neural Ordinary Differential Equations (ANODEs)
+### 2. Neural ODE with JAX
 
-**Description**: ANODEs take Neural ODEs a step further by augmenting the hidden state with additional dimensions. This boosts the model’s expressiveness, allowing it to capture even more intricate dynamics.
+**Description**: This version takes advantage of JAX’s powerful automatic differentiation and efficient computation on GPUs. The model is trained on a slightly more complex system of ODEs, like the Van Der Pol oscillator, to explore how well it can capture non-linear dynamics.
 
-![Augmented Neural ODE Example](images/augmented_neural_ode_example.png)
+![JAX Neural ODE Example](images/jax_neural_ode_example.png)
 
-**Reference**:  
-Dupont, E., Besse, F., George, F., Courville, A., & Ganguli, S. (2019). [Augmented Neural ODEs](https://arxiv.org/abs/1904.01681). *arXiv preprint arXiv:1904.01681*.
+**Key Features**:
+- Utilizes JAX’s autograd for efficient gradient computation.
+- Demonstrates improved performance and flexibility over manual implementation.
+- Insights into handling dynamic systems with continuous-time models.
 
-### 3. Neural Stochastic Differential Equations (Neural SDEs)
-
-**Description**: Neural SDEs introduce stochasticity into the ODE framework, making them perfect for modeling data with inherent randomness and uncertainty—think financial time-series or noisy sensor data.
-
-![Neural SDE Example](images/neural_sde_example.png)
-
-**Reference**:  
-Tzen, B., & Raginsky, M. (2019). [Neural Stochastic Differential Equations for Time-Series Modeling](https://arxiv.org/abs/1906.11036). *arXiv preprint arXiv:1906.11036*.
-
-### 4. Neural Controlled Differential Equations (Neural CDEs)
-
-**Description**: Designed to handle irregularly sampled time-series data, Neural CDEs treat observations as control paths. This makes them incredibly robust for datasets with sparse and irregular intervals, like healthcare records or traffic data.
-
-![Neural CDE Example](images/neural_cde_example.png)
-
-**Reference**:  
-Kidger, P., Pfaff, T., Tzen, B., & Raginsky, M. (2020). [Neural Controlled Differential Equations for Irregular Time-Series](https://arxiv.org/abs/2010.03212). *arXiv preprint arXiv:2010.03212*.
-
-### 5. Physics-Informed Neural Networks (PINNs)
-
-**Description**: PINNs integrate physical laws described by partial differential equations (PDEs) into the training of neural networks. This allows for solving complex physical systems by embedding domain knowledge directly into the model.
-
-![PINN Example](images/pinn_example.png)
-
-**Reference**:  
-Raissi, M., Perdikaris, P., & Karniadakis, G. E. (2019). [Physics-Informed Neural Networks: A Deep Learning Framework for Solving Forward and Inverse Problems Involving Nonlinear Partial Differential Equations](https://arxiv.org/abs/1711.10561). *Journal of Computational Physics, 378*, 686-707.
+---
 
 ## Installation
 
-Getting started is super easy! Just follow these steps:
+Follow these steps to set up the project:
 
 ### Prerequisites
 
 - **Python 3.7** or higher
-- **pip** package manager
-- **Jupyter Notebook** (for running the notebooks)
+- **JAX**
+- **Matplotlib** and **NumPy**
 
 ### Steps
 
 1. **Clone the repository**
 
     ```bash
-    git clone https://github.com/benjaminfranklin03/NeuroDiffEqLab.git
+    git clone https://github.com/yourusername/NeuroDiffEqLab.git
     cd NeuroDiffEqLab
     ```
 
@@ -119,79 +86,39 @@ Getting started is super easy! Just follow these steps:
     pip install -r requirements.txt
     ```
 
-4. **Launch Jupyter Notebook**
+4. **Run the notebooks**
 
-    ```bash
-    jupyter notebook
-    ```
+    Open the project notebooks to explore the implementations step by step.
+
+---
 
 ## Usage
 
-Each model is neatly organized into its own Jupyter Notebook within the `notebooks/` directory. Dive into any notebook to explore the step-by-step implementation, experiment with different datasets, and visualize the results.
+Each implementation can be found in the `notebooks/` directory:
 
-### Neural ODE
+- **`NeuralODE_FromScratch.ipynb`**: Details the basic implementation, training on simple regression data.
+- **`NeuralODE_JAX.ipynb`**: Explores the JAX implementation and training on the Van Der Pol oscillator system.
 
-- **File**: `notebooks/NeuralODE.ipynb`
-- **Description**: Implements a basic Neural ODE using the Runge-Kutta method.
-- **Usage**: Learn how to set up the forward pass, train the model, and evaluate it on simple datasets.
+Simply open the notebooks in Jupyter and follow along to see the code, explanations, and results.
 
-### Augmented Neural ODE
+---
 
-- **File**: `notebooks/AugmentedNeuralODE.ipynb`
-- **Description**: Enhances Neural ODEs by increasing the dimensionality of the hidden state.
-- **Usage**: Test the augmented model on complex trajectory datasets and observe the improvements in expressiveness.
+## Results and Insights
 
-### Neural SDE
+### Basic Neural ODE
+- Demonstrated the fundamental process of setting up and training a Neural ODE from scratch.
+- Reflections on manual gradient calculations and training challenges.
 
-- **File**: `notebooks/NeuralSDE.ipynb`
-- **Description**: Introduces stochasticity into the Neural ODE framework.
-- **Usage**: Model data with inherent randomness, such as financial time-series, and explore uncertainty estimation.
+### Neural ODE with JAX
+- Highlighted the power of JAX’s automatic differentiation.
+- Achieved smoother, more efficient training and more complex system modeling.
 
-### Neural CDE
-
-- **File**: `notebooks/NeuralCDE.ipynb`
-- **Description**: Handles irregularly sampled time-series data using Controlled Differential Equations.
-- **Usage**: Apply the model to healthcare or traffic datasets with irregular sampling intervals and compare performance against standard ODEs.
-
-### PINN
-
-- **File**: `notebooks/PINN.ipynb`
-- **Description**: Solves partial differential equations by embedding physical laws into the neural network.
-- **Usage**: Implement solutions to the heat equation or other PDEs and compare with analytical solutions to evaluate accuracy.
-
-## Examples and Visualizations
-
-Visualizations are key to understanding how each model behaves and performs. Here are some cool plots generated from the implementations:
-
-![Neural ODE Trajectory](images/neural_ode_example.png)
-*Figure 1: Example trajectory generated by Neural ODE.*
-
-![Augmented Neural ODE Trajectory](images/augmented_neural_ode_example.png)
-*Figure 2: Example trajectory generated by Augmented Neural ODE.*
-
-![Neural SDE Multiple Trajectories](images/neural_sde_example.png)
-*Figure 3: Multiple stochastic trajectories generated by Neural SDE.*
-
-![Neural CDE Irregular Sampling](images/neural_cde_example.png)
-*Figure 4: Handling of irregular sampling in Neural CDE.*
-
-![PINN PDE Solution](images/pinn_example.png)
-*Figure 5: Solution to the heat equation using PINN compared to the analytical solution.*
-
-*(Replace these placeholders with your actual images once you've generated them!)*
+---
 
 ## References
 
-A big shoutout to the researchers whose groundbreaking papers inspired this project:
+This project draws inspiration from:
 
-- **Chen, R. T. Q., Rubanova, Y., Bettencourt, J., & Duvenaud, D. (2018).** Neural Ordinary Differential Equations. *arXiv preprint arXiv:1806.07366*. [Read Paper](https://arxiv.org/abs/1806.07366)
-  
-- **Dupont, E., Besse, F., George, F., Courville, A., & Ganguli, S. (2019).** Augmented Neural ODEs. *arXiv preprint arXiv:1904.01681*. [Read Paper](https://arxiv.org/abs/1904.01681)
-  
-- **Tzen, B., & Raginsky, M. (2019).** Neural Stochastic Differential Equations for Time-Series Modeling. *arXiv preprint arXiv:1906.11036*. [Read Paper](https://arxiv.org/abs/1906.11036)
-  
-- **Kidger, P., Pfaff, T., Tzen, B., & Raginsky, M. (2020).** Neural Controlled Differential Equations for Irregular Time-Series. *arXiv preprint arXiv:2010.03212*. [Read Paper](https://arxiv.org/abs/2010.03212)
-  
-- **Raissi, M., Perdikaris, P., & Karniadakis, G. E. (2019).** Physics-Informed Neural Networks: A Deep Learning Framework for Solving Forward and Inverse Problems Involving Nonlinear Partial Differential Equations. *Journal of Computational Physics, 378*, 686-707. [Read Paper](https://arxiv.org/abs/1711.10561)
+- **Chen, R. T. Q., Rubanova, Y., Bettencourt, J., & Duvenaud, D. (2018)**. [Neural Ordinary Differential Equations](https://arxiv.org/abs/1806.07366). *arXiv preprint arXiv:1806.07366*.
 
 ---
