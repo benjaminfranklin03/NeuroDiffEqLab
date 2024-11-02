@@ -58,11 +58,6 @@ The repository showcases the process of constructing these models and training t
 
 Follow these steps to set up the project:
 
-### Prerequisites
-
-- **Python 3.7** or higher
-- **JAX**
-- **Matplotlib** and **NumPy**
 
 ### Steps
 
