@@ -105,7 +105,7 @@ Simply open the notebooks in Jupyter and follow along to see the code, explanati
 - Calculating gradients manually was really unstable and I had all kinds of issues with underflow, exploding gradients, etc. but I somewhat fixed it with gradient clipping.
 
 ### Neural ODE with JAX
-- I could use JAX's autodiff tool instead of doing everything manually.
+- I was able use JAX's autodiff tool instead of doing everything manually.
 - The training was much much smoother and building the neural ODE was much faster and much more stable than any adjoint method I was able to implement.
 
 ---
