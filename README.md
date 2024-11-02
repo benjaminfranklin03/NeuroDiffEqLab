@@ -2,7 +2,7 @@
 
 Welcome to **NeuroDiffEqLab**! 🚀 This project is a deep dive into understanding and building Neural Ordinary Differential Equations (Neural ODEs) from scratch, both manually and using JAX. The project serves as an exploration into implementing these models, training them on simple tasks, and analyzing their behaviors.
 
-![Project Banner](images/project_banner.png)
+
 
 ---
 
@@ -24,7 +24,7 @@ Welcome to **NeuroDiffEqLab**! 🚀 This project is a deep dive into understandi
 - A basic implementation from scratch to gain insight into the underlying mechanics.
 - A JAX-based implementation to leverage its efficiency and automatic differentiation capabilities.
 
-The repository showcases the process of constructing these models, training them on a simple regression task and a dynamic system (e.g., Van Der Pol oscillator), and reflecting on the performance and learnings from each phase.
+The repository showcases the process of constructing these models and training them on a simple regression task and a dynamic system (e.g., Van Der Pol oscillator).
 
 ---
 
@@ -99,19 +99,19 @@ Each implementation can be found in the `notebooks/` directory:
 - **`NeuralODE_FromScratch.ipynb`**: Details the basic implementation, training on simple regression data.
 - **`NeuralODE_JAX.ipynb`**: Explores the JAX implementation and training on the Van Der Pol oscillator system.
 
-Simply open the notebooks in Jupyter and follow along to see the code, explanations, and results.
+Simply open the notebooks in Jupyter and follow along to see the code, explanations, and results. Additionally, some visualizations can be found in the training plots.
 
 ---
 
-## Results and Insights
+## Results
 
 ### Basic Neural ODE
-- Demonstrated the fundamental process of setting up and training a Neural ODE from scratch.
-- Reflections on manual gradient calculations and training challenges.
+- Building a neural ODE from scratch was a fun experience and it really showed me how they worked from a more fundamental level, but the implementation also came with many headaches.
+- Calculating gradients manually was really unstable and I had all kinds of issues with underflow, exploding gradients, etc. but I somewhat fixed it with gradient clipping.
 
 ### Neural ODE with JAX
-- Highlighted the power of JAX’s automatic differentiation.
-- Achieved smoother, more efficient training and more complex system modeling.
+- I could use JAX's autodiff tool instead of doing everything manually.
+- The training was much much smoother and building the neural ODE was much faster and much more stable than any adjoint method I was able to implement.
 
 ---
 
