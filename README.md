@@ -32,7 +32,7 @@ The repository showcases the process of constructing these models and training t
 
 ### 1. Basic Neural ODE from Scratch
 
-**Description**: This implementation involves building a Neural ODE model without relying on high-level libraries, allowing for a thorough understanding of the mathematical underpinnings. The model is trained on a simple regression task to demonstrate its ability to learn continuous representations.
+**Description**: This implementation involves building a Neural ODE model without relying on high-level libraries, allowing for a thorough understanding of the mathematical underpinnings. The model is trained on a very simple regression task, where it basically just has to predict the trajectory from a starting point A to a point B.
 
 ![Basic Neural ODE Example](images/neural_ode_example.png)
 
