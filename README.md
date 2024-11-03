@@ -34,7 +34,7 @@ The repository showcases the process of constructing these models and training t
 
 **Description**: This implementation involves building a Neural ODE model without relying on high-level libraries, allowing for a thorough understanding of the mathematical underpinnings. The model is trained on a very simple regression task, where it basically just has to predict the trajectory from a starting point A to a point B.
 
-![Basic Neural ODE Example](images/neural_ode_example.png)
+![Basic Neural ODE Example](notebooks/training_plots/pair_plot.png)
 
 **Key Features**:
 - Handcrafted ODE solver.
@@ -45,7 +45,7 @@ The repository showcases the process of constructing these models and training t
 
 **Description**: This version takes advantage of JAX’s automatic differentiation and GPU acceleration. The model is trained on a slightly more complex system of ODEs, like the Van Der Pol oscillator, to explore how well it can model non-linear dynamics.
 
-![JAX Neural ODE Example](images/jax_neural_ode_example.png)
+![JAX Neural ODE Example](notebooks/training_plots/pair_plot.png)
 
 **Key Features**:
 - Utilizes JAX’s autograd for efficient gradient computation.
